@@ -282,3 +282,167 @@ while(r <= 10){
     console.log('Lifiting weight repetition '+ r);
     r++;
 }
+
+
+// queryselector
+console.log(" ");
+console.log("-------------- queryselector -------------------");
+document.querySelector(".message").style.color = "red";
+document.querySelector('.message_change_text').textContent = "Query Selector change text example";
+
+document.querySelector("#check_num_btn").addEventListener('click', function(){
+    var val = document.querySelector('#check_number').value;
+    if(val != ''){
+        document.querySelector('.num_val').textContent = "Number is: "+val;
+    } else {
+        document.querySelector('.num_val').textContent = "";
+    }
+
+});
+
+document.querySelector("#text_show").addEventListener('click', function(){
+    document.querySelector('.show_text').classList.remove('d-none');
+});
+document.querySelector("#text_hide").addEventListener('click', function(){
+    document.querySelector('.show_text').classList.add('d-none');
+});
+
+// document
+document.querySelector('#key_down').addEventListener('keydown', function(){
+    if(this.value != ""){
+        console.log(this.value) ;
+    }
+});
+document.querySelector('#key_up').addEventListener('keyup', function(){
+    console.log(this.value);
+});
+
+// Destructing Array
+console.log(" ");
+console.log("-------------- Destructing Array -------------------");
+var arr = [2,3,4];
+// var a = arr[0];
+// var b = arr[1];
+// var c = arr[2];
+var [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
+
+console.log(" ");
+console.log("-------------- Spread Array -------------------");
+var array = [7,8,9];
+var newArray = [1, 2, ...array];
+console.log(newArray);
+
+// let count = 0;
+// let text = "";
+
+// let qty = 0 || 42;
+// let message = text || "hi!";
+// console.log(qty);     // 42 and not 0
+// console.log(message); 
+
+// const nullValue = null;
+// const emptyText = ""; // falsy
+// const someNumber = 42;
+
+// const valA = nullValue ?? "default for A";
+// const valB = emptyText ?? "default for B";
+// const valC = "4" ?? 0;
+
+// console.log(valA); // "default for A"
+// console.log(valB); // "" (as the empty string is not null or undefined)
+// console.log(valC); // 42
+
+var array1 = ['a', 'b', 'c'];
+
+for (var element of array1) {
+  console.log(element);
+}
+
+const adventurer = {
+    name: 'Alice',
+    cat: {
+      name: 'Dinah',
+      name: 'df'
+    }
+  };
+  
+  const dogName = adventurer.cat?.name;
+  console.log(dogName);
+  // expected output: undefined
+  
+  console.log(adventurer.someNonExistentMethod?.());
+  // expected output: undefined
+
+
+// Set Method
+console.log(" ");
+console.log("---------------- Set Method ----------------");
+var sel_demo = new Set([
+    'pista',
+    'pista',
+    'green',
+    'red',
+    'pista',
+    'pink'
+]);
+console.log(sel_demo);
+
+console.log(" ");
+console.log("---------------- Set Add Method ----------------");
+var add_set = new Set();
+add_set.add("a");
+add_set.add("b");
+add_set.add("c");
+console.log(add_set.size);
+
+console.log(" ");
+console.log("---------------- Set Delete Method ----------------");
+var set_delete = new Set([
+    'pista',
+    'pista',
+    'green',
+    'red',
+    'pista',
+    'pink'
+]);
+set_delete.delete("pista");
+console.log(set_delete);
+
+console.log(" ");
+console.log("---------------- Map Function ----------------");
+// every element mate function call thay
+var numbers = [4, 9, 16, 25];
+console.log(numbers.map(Math.sqrt));
+
+console.log(" ");
+console.log("---------------- Working With Strings ----------------");
+var string = "working with string";
+var str = 'ABC123';
+console.log(str[0]);
+console.log(str[1]);
+console.log(str[2]);
+console.log('Xyz123'[0]);
+
+console.log(string.length);
+console.log('Xyz123'.length);
+console.log("--------------");
+console.log(string.indexOf('w'));
+console.log(string.lastIndexOf('w'));
+console.log(string.indexOf('string'));
+
+console.log('---------------');
+console.log(string.slice(8));
+console.log(string.slice(8,14));
+console.log(string.slice(-2));
+
+console.log('---------------');
+console.log(string.toLowerCase());
+console.log(string.toUpperCase());
+
+var str1 = "  ABC 123 ";
+console.log(str1.trim());
+var str_replace = "hyyy javascript";
+console.log(str_replace.replace("hyyy", "hello"));
+

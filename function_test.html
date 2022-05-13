@@ -5,6 +5,9 @@
             body {
                 background-color: beige ;
             }
+            .d-none {
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -14,7 +17,27 @@
             <input type="text" placeholder="Your Name" required="">
             <button>Ok</button>
         </form>
+        <p class="message">Query Selector Example</p>
+        <p class="message_change_text">Old Text</p>
+
+        <input type="number" name="check_number" id="check_number" required="">
+        <button type="submit" id="check_num_btn">Check Number</button>
+        <p class="num_val"></p>
+    
+        <div>
+            <button type="submit" id="text_show">Show Text</button>
+            <button type="submit" id="text_hide">Hide Text</button>
+        </div>
+        <div class="d-none show_text">
+            <p>Show Text</p>
+        </div>
+        <div style="margin-top: 10px;">
+            <input type="text" id="key_down" placeholder="Key Down">
+        </div>
+        <div style="margin-top: 10px;">
+            <input type="text" id="key_up" placeholder="Key Up">
+        </div>
+        
     </body>
     <script src="script.js"></script>
 </html>
-
