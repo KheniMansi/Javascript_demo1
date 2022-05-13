@@ -334,47 +334,11 @@ var array = [7,8,9];
 var newArray = [1, 2, ...array];
 console.log(newArray);
 
-// let count = 0;
-// let text = "";
-
-// let qty = 0 || 42;
-// let message = text || "hi!";
-// console.log(qty);     // 42 and not 0
-// console.log(message); 
-
-// const nullValue = null;
-// const emptyText = ""; // falsy
-// const someNumber = 42;
-
-// const valA = nullValue ?? "default for A";
-// const valB = emptyText ?? "default for B";
-// const valC = "4" ?? 0;
-
-// console.log(valA); // "default for A"
-// console.log(valB); // "" (as the empty string is not null or undefined)
-// console.log(valC); // 42
-
 var array1 = ['a', 'b', 'c'];
 
 for (var element of array1) {
   console.log(element);
 }
-
-const adventurer = {
-    name: 'Alice',
-    cat: {
-      name: 'Dinah',
-      name: 'df'
-    }
-  };
-  
-  const dogName = adventurer.cat?.name;
-  console.log(dogName);
-  // expected output: undefined
-  
-  console.log(adventurer.someNonExistentMethod?.());
-  // expected output: undefined
-
 
 // Set Method
 console.log(" ");
