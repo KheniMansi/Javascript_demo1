@@ -410,6 +410,7 @@ console.log(str1.trim());
 var str_replace = "hyyy javascript";
 console.log(str_replace.replace("hyyy", "hello"));
 
+<<<<<<< HEAD
 // 
 console.log(" ");
 console.log("---------------- How to pass argument ----------------");
@@ -426,3 +427,5 @@ function demo_pass_arg(flight, passager){
 }
 demo_pass_arg(flight, passager);
 // 
+=======
+>>>>>>> f37844b1c52c3493fe03abb1bd4695f17187c96e
