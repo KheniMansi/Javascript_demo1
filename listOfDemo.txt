@@ -1,0 +1,35 @@
+- If Condition
+- Function
+- Data Type
+- Basic Operator(*, -, +, /)
+- String
+- True and false values
+- Equality Oprators == And ===
+- Logical Oprators (&&, ||, !)
+- Switch Case
+- Expression(>, <)
+- Ternary Oprator
+- Arrow Function
+- Function calling other function
+- Array Function
+- Basic Array Function
+    - push
+    - unshift
+    - pop
+    - shift
+    - indexOf
+    - includes
+- Dot And Brteacket
+- Object Method
+- Foor Loop
+- Looping array, Breaking, Continuing
+- Loops in Loop
+- While Loop
+- Html demo
+- queryselector
+- click event
+- keydown
+- keyup
+- Spread Array
+
+
