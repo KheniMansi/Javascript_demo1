@@ -226,8 +226,8 @@ var obj = {
 console.log(obj.calcAge());
 
 console.log(' ');
-console.log("-------------- Foor Loop -------------------");
-for(var i = 0; i < 10; i++){
+console.log("-------------- For Loop -------------------");
+for(var i = 0; i < 10000; i++){
     console.log('For Loop example '+ i);
 }
 
@@ -410,7 +410,6 @@ console.log(str1.trim());
 var str_replace = "hyyy javascript";
 console.log(str_replace.replace("hyyy", "hello"));
 
-<<<<<<< HEAD
 // 
 console.log(" ");
 console.log("---------------- How to pass argument ----------------");
@@ -426,6 +425,102 @@ function demo_pass_arg(flight, passager){
     }
 }
 demo_pass_arg(flight, passager);
-// 
-=======
->>>>>>> f37844b1c52c3493fe03abb1bd4695f17187c96e
+
+// console.log(" ");
+// console.log("---------------- synchronous JavaScript ----------------");
+// for(var s=0; s < 50; s++){
+//     console.log(s);
+// }
+// console.log("hello");
+
+// console.log(" ");
+// console.log("---------------- Asynchronous JavaScript ----------------");
+// setTimeout(function(){
+//     for(var as=0; as < 50; as++){
+//         console.log(as);
+//     }
+// }, 1000);
+
+// console.log("hyyyyyyyyyyyyyyyyyy");
+
+console.log(" ");
+console.log("---------------- simpal api call ----------------");
+
+
+var a = new XMLHttpRequest();
+a.open("GET", 'https://jsonplaceholder.typicode.com/albums', false);
+a.send();
+var output = a.response;
+console.log(JSON.parse(output));
+console.log("##########################################################");
+
+
+var b = new XMLHttpRequest();
+b.open("GET", 'https://jsonplaceholder.typicode.com/users', false);
+b.send();
+var output = b.response;
+console.log(JSON.parse(output));
+
+
+console.log(" ");
+console.log("---------------- callback function using api call ----------------");
+var call_demo1 = (api_name) => {
+    console.log("***************************************************************************");
+    var a = new XMLHttpRequest();
+    a.open("GET", api_name, false);
+    a.send();
+    var output = a.response;
+    console.log(JSON.parse(output));
+}
+var get_api_data1 = (callback) => {
+    var api_data = 'https://jsonplaceholder.typicode.com/albums';
+    callback(api_data);
+}
+
+
+var call_demo = (api_url) => {
+    var a = new XMLHttpRequest();
+    a.open("GET", api_url, false);
+    a.send();
+    var output = a.response;
+    console.log("-------- (((((((((((((((((((((((((((((((((((((((((((((((((((((((((");
+    console.log(JSON.parse(output));
+    get_api_data1(call_demo1);
+}
+var get_api_data = (callback) => {
+    var api_data = 'https://jsonplaceholder.typicode.com/posts';
+    callback(api_data);
+}
+get_api_data(call_demo);
+
+
+console.log(" ");
+console.log("------------------------- Promise -----------------------");
+var promise = new Promise((resolve, reject) => {
+    var a = new XMLHttpRequest();
+    a.open("GET", 'https://jsonplaceholder.typicode.com/posts', false);
+    a.send();
+    var output = a.response;
+    console.log(JSON.parse(output));
+    if(a.status != '404'){
+        resolve("if");
+    } else {
+        reject("error");
+    }
+})
+promise.then(result => console.log(result)).catch(()=> {    
+    console.log('error');
+})
+
+console.log(" ");
+console.log("----------------- Async & Await ------------------");
+var ascyncAwit = async() => {
+    var response = await fetch('https://jsonplaceholder.typicode.com/users');
+    var ok = await response.json();
+    var response = await fetch('https://jsonplaceholder.typicode.com/users');
+    var ok2 = await response.json();
+    console.log(ok);
+    console.log('-----------------');
+    console.log(ok2);
+}
+ascyncAwit();
