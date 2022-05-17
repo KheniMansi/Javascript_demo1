@@ -511,6 +511,25 @@ var promise = new Promise((resolve, reject) => {
 promise.then(result => console.log(result)).catch(()=> {    
     console.log('error');
 })
+promise.then(function(){
+    var promise_next = new Promise((resolve, reject) => {
+        var a = new XMLHttpRequest();
+        a.open("GET", 'https://jsonplaceholder.typicode.com/posts', false);
+        a.send();
+        var output = a.response;
+        console.log(JSON.parse(output));
+        if(a.status != '404'){
+            resolve("iffffffffffffffffffffffffffffffffffffffffffffffff");
+        } else {
+            reject("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+        }
+    })
+    promise_next.then(result1 => console.log(result1)).catch(()=> {    
+        console.log('errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+    })
+}).catch(()=> {    
+    console.log('error');
+})
 
 console.log(" ");
 console.log("----------------- Async & Await ------------------");
@@ -524,3 +543,27 @@ var ascyncAwit = async() => {
     console.log(ok2);
 }
 ascyncAwit();
+
+console.log(" ");
+console.log("------------- Closures -------------");
+var first = () => {
+    var text = "hello";
+    var second = () => {
+        var name = "jack";
+        console.log(text);
+    }
+    return second();
+}
+console.log(first());
+
+
+console.log(" ");
+console.log("------------- LocalStorage -------------");
+localStorage.setItem("name", "Jack");
+console.log(localStorage.getItem('name'));
+console.log(localStorage.removeItem('name'));
+console.log(" ");
+console.log("------------- sessionStorage -------------");
+sessionStorage.setItem("namess", "Jack");
+console.log(sessionStorage.getItem('namess'));
+console.log(sessionStorage.removeItem('namess'));
