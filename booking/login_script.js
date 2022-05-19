@@ -1,32 +1,36 @@
+// eve.holt@reqres.in
+// cityslicka
+
+
 var get_token = localStorage.getItem('token');
 var get_email = localStorage.getItem('email');
-// console.log(get_token);
-// console.log(get_email);
-if((get_token != '' && get_token != null) && (get_email != ''  && get_email != null)){
+if ((get_token != '' && get_token != null) && (get_email != '' && get_email != null)) {
     window.location.href = "user.html";
 }
-
-function login(){
+function login() {
     var email = document.forms["login_frm"]["email"].value;
     var pass = document.forms["login_frm"]["psw"].value;
-    if(email == ""){
+
+    if (email == "") {
         alert("Please enter email");
-    } else if(pass == ""){
+    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false) {
+        alert("You have entered an invalid email address!")
+    } else if (pass == "") {
         alert("Please enter password");
-    } else if(email != "" && pass != "") {
+    } else if (email != "" && pass != "") {
         var ascyncAwit = async () => {
             const rawResponse = await fetch('https://reqres.in/api/login', {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({email: 'eve.holt@reqres.in', password: 'cityslicka'})
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, password: pass })
             });
             const content = await rawResponse.json();
-            
+
             console.log(content);
-            if(content.error){
+            if (content.error) {
                 alert("Your password and email address are worng. Please try again");
             } else {
                 localStorage.setItem("email", "eve.holt@reqres.in");
@@ -35,6 +39,6 @@ function login(){
             }
         }
         ascyncAwit();
-      
+
     }
 }
