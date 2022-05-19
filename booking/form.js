@@ -1,6 +1,6 @@
 var get_token = localStorage.getItem('token');
 var get_email = localStorage.getItem('email');
-console.log(get_token);
+
 if ((get_token == '' || get_token == null) || (get_email == '' || get_email == null)) {
   window.location.href = "login.html";
 }
@@ -8,6 +8,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
+// Display data in all fileds
 let value = params.id;
 if (value != '' && value != null) {
   document.getElementById("email").setAttribute("disabled", "disabled");
@@ -31,6 +32,7 @@ if (value != '' && value != null) {
   }
 }
 
+// Create and update from
 function validateForm() {
 
   var first_name = document.forms["form"]["fname"].value;
@@ -61,8 +63,6 @@ function validateForm() {
         if (rawResponse.status == 404) {
           alert("Something went wrong please try again");
         } else {
-          // localStorage.setItem("email", "eve.holt@reqres.in");
-          // localStorage.setItem("token", content.token);
           alert("User update sucessfully");
           window.location.href = "user.html";
         }
@@ -84,12 +84,8 @@ function validateForm() {
         console.log(rawResponse);
         if (rawResponse.status == 404) {
           alert("Something went wrong please try again");
-          // alert("Your password and email address are worng. Please try again");
         } else {
           alert("User create sucessfully");
-          // localStorage.setItem("email", "eve.holt@reqres.in");
-          // localStorage.setItem("token", content.token);
-          // window.location.href = "user.html";
           window.location.href = "user.html";
         }
       }

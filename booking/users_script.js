@@ -1,7 +1,7 @@
 
 var get_token = localStorage.getItem('token');
 var get_email = localStorage.getItem('email');
-console.log(get_token);
+
 if ((get_token == '' || get_token == null) || (get_email == '' || get_email == null)) {
     window.location.href = "login.html";
 } else {
@@ -15,11 +15,11 @@ if ((get_token == '' || get_token == null) || (get_email == '' || get_email == n
         document.getElementById("sucess_msg").innerHTML = get_sucess_msg_show;
         setTimeout(function () {
             document.getElementById("sucess_msg").innerHTML = "";
-            // localStorage.removeItem('login_sucess_msg');
         }, 3000);
     }
 }
 
+// User List Fetch
 function user_list() {
     var promise = new Promise((resolve, reject) => {
         var a = new XMLHttpRequest();
@@ -64,6 +64,8 @@ function user_list() {
     })
 }
 user_list();
+
+// Delete User 
 function delete_user(id) {
     if (confirm("Are you sure you want to delete user?")) {
         var ascyncAwit = async () => {
