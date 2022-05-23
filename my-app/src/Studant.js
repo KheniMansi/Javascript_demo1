@@ -8,4 +8,4 @@ class Student extends Component{
     }
 }
 
-export default Studant;
+export default Student;

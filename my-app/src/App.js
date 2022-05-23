@@ -1,7 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-import Navbar from './Componentes/Navbar'
-import Home from './Home'
+// import Demo from './Componentes/Demo';
+// import Navbar from './Componentes/Navbar'
+// import Home from './Home'
+// import UseEffect from './Componentes/UseEffect'
+// import Demo from './Componentes/Demo';
+import FirstDemo from './Componentes/FirstDemo';
+// import SecondDemo from './Componentes/SecondDemo';
 // function App() {
 //   return (
 //     <div className="App">
@@ -26,8 +31,12 @@ function App() {
   return (
     // <Navbar>
     <>
-      <Home />
-      <Navbar title="Demo11" about="About Us"/>
+    <FirstDemo/>
+    {/* <FirstDemo />
+    <SecondDemo /> */}
+      {/* <UseEffect /> */}
+      {/* <Home />
+      <Navbar title="Demo11" about="About Us"/> */}
     </>
   );
 }
